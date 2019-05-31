@@ -45,6 +45,11 @@ https://github.com/martinmarinov/rtl_tcp_andro-/blob/7ebe4c49698196c2718d4ac3cc1
     by calling libusb_open2(dev, handle, fd)[7].
 7. and that all you need.
 
+Android 7.1 已经测试，不需要root权限。
+
+Linux系统上不需要root，需要在/etc/udev/rules.d中添加一个文件（例如：70-my-rule.rules），
+内容为：SUBSYSTEMS=="usb", ATTRS{idVendor}=="04d8", MODE="666"，重新启动电脑，就可以正常调用libusb了。
+
 [1] http://developer.android.com/reference/android/hardware/usb/UsbDevice.html
 [2] http://developer.android.com/reference/android/hardware/usb/UsbDevice.html#getDeviceName%28%29
 [3] https://github.com/martinmarinov/rtl_tcp_andro-/blob/7ebe4c49698196c2718d4ac3cc1012e7dc6cf5f7/rtlsdr/src/main/jni/src/rtl-sdr-android.c#L52
