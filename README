@@ -28,8 +28,11 @@ http://mailing-list.libusb.info
 - Chris Dickens <christopher.a.dickens@gmail.com>
 (Please use the mailing list rather than mailing developers directly)
 
-How To for Android
+Android 如何使用
 ==================
+使用示例参考：
+https://github.com/martinmarinov/rtl_tcp_andro-/blob/7ebe4c49698196c2718d4ac3cc1012e7dc6cf5f7/rtlsdr/src/main/jni/src/rtl-sdr-android.c
+
 
 1. Search for the UsbDevice [1] you are interested in.
 2. Extract the usbfs path [2] from the UsbDevice.
@@ -39,13 +42,13 @@ How To for Android
 5. from the UsbDeviceConnection, extract the fd[6]
 6. now, from the fd and the previously
     created libusb_device, build a libusb_device_handle
-    by calling libusb_get_device2(dev, handle, fd)[7].
+    by calling libusb_open2(dev, handle, fd)[7].
 7. and that all you need.
 
 [1] http://developer.android.com/reference/android/hardware/usb/UsbDevice.html
 [2] http://developer.android.com/reference/android/hardware/usb/UsbDevice.html#getDeviceName%28%29
-[3] https://github.com/kuldeepdhaka/libusb/blob/android-open2/libusb/core.c#L1492
+[3] https://github.com/martinmarinov/rtl_tcp_andro-/blob/7ebe4c49698196c2718d4ac3cc1012e7dc6cf5f7/rtlsdr/src/main/jni/src/rtl-sdr-android.c#L52
 [4] http://developer.android.com/reference/android/hardware/usb/UsbManager.html#openDevice%28android.hardware.usb.UsbDevice%29
 [5] http://developer.android.com/reference/android/hardware/usb/UsbDeviceConnection.html
 [6] http://developer.android.com/reference/android/hardware/usb/UsbDeviceConnection.html#getFileDescriptor%28%29
-[7] https://github.com/kuldeepdhaka/libusb/blob/android-open2/libusb/core.c#L1267
+[7] https://github.com/martinmarinov/rtl_tcp_andro-/blob/7ebe4c49698196c2718d4ac3cc1012e7dc6cf5f7/rtlsdr/src/main/jni/src/rtl-sdr-android.c#L59
