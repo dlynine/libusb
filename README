@@ -29,6 +29,7 @@ http://mailing-list.libusb.info
 (Please use the mailing list rather than mailing developers directly)
 
 Android 如何使用
+Libusb官方已经添加libusb_wrap_sys_device接口，Android使用此接口即可，此工程已废弃。
 ==================
 使用示例参考：
 https://github.com/martinmarinov/rtl_tcp_andro-/blob/7ebe4c49698196c2718d4ac3cc1012e7dc6cf5f7/rtlsdr/src/main/jni/src/rtl-sdr-android.c
